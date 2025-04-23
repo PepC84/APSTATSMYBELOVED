@@ -112,4 +112,18 @@ class DataBucket {
   
   
 }
+float binompdf(float trials,float p,float x) {
+  if(trials<x) {
+   return 1; 
+  }
+  int combinations = (factorial(int(trials)))/(factorial(int(x))*factorial(int(trials)-int(x)));
+
   
+  return combinations*pow(p,x)*pow(1-p,trials-x);
+}
+int factorial(int x) {
+  
+ if(x==1) { return 1; }
+ 
+ return x * factorial(x-1);
+}
